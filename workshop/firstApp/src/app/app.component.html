@@ -1,0 +1,27 @@
+<h1>welcome</h1>
+Name of Project:<font [color]="mycolor"> {{projectTitle}}</font><br>
+<button [disabled]="status" (click)="showData()">click me</button><br>
+<button (click)="showData1()"> click me</button>
+
+<input type="text" [(ngModel)]="name"> {{name}}<br>
+
+<h2>Template Driven forms</h2>
+
+<form #contactForm="ngForm" (ngSubmit)="onSubmit(contactForm.value)">
+
+FirstName: <input type="text" required #firstname="ngModel" name="firstname" ngModel><br>
+<span *ngIf="firstname.invalid && firstname.touched" style="color:red;">
+    please enter valid input </span><br>
+LastName: <input type="text" name="lastname" ngModel><br><br>
+EmailId :  <input type="email" name="email" ngModel><br><br>
+<button type="submit">submit</button>
+</form>
+
+book options:
+<ul>
+    <li><a routerLink="/add-Book">add-book</a></li>
+    <li><a routerLink="/delete-Book">delete-book</a></li>
+</ul>
+
+components Loading....
+<router-outlet></router-outlet>
